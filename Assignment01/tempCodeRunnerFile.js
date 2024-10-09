@@ -1,1 +1,0 @@
-const employeeModel = require("./models/Employee")

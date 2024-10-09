@@ -1,19 +1,18 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 const path = require('path');
 const { User } = require('../models/Employee');
-const employeeModel = require(path.join(__dirname,'../models/Employee'))
 
 router.get('/', (req,res) => {
     res.sendFile(path.join(__dirname,'../views/user.html'));
 });
 
 
-router.get('/register', (req,res) => {
+router.get('/signup', (req,res) => {
     res.sendFile(path.join(__dirname, '../views/register.html'));
 });
 
-router.post('/register', async (req,res) => {
+router.post('/signup', async (req,res) => {
     const {username, password, email} = req.body;
      
     try{
@@ -28,15 +27,15 @@ router.post('/register', async (req,res) => {
             return res.status(400).json({message: 'Email has been taken'});
         }
 
-        const newEmployee = new User({
+        const newUser = new User({
             email, username, password,
             created_at: new Date(),
             updated_at: new Date()
         });
 
-        await newEmployee.save();
+        await newUser.save();
         res.json({message: "User created successfully.",
-            "user_id": newEmployee._id,
+            "user_id": newUser._id,
             "Email":`${email}`,
             "Password":`${password}`
         });

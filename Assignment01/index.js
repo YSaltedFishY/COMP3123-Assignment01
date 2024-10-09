@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose")
 const employeeModel = require("./models/Employee")
 const userRouter = require("./routes/user")
+const empRouter = require("./routes/employee")
 
 const app = express();
 
@@ -9,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('views'))
 
-app.use('/user', userRouter)
+app.use('/api/v1/user', userRouter);
+app.use('/api/v1/emp', empRouter);
 
 mongoose.connect('mongodb://localhost:27017/Employee')
 .then(()=> console.log('connect to MongoDB'))
