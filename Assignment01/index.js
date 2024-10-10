@@ -13,7 +13,7 @@ app.use(express.static('views'))
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/emp', empRouter);
 
-mongoose.connect('mongodb://localhost:27017/Employee')
+mongoose.connect('mongodb+srv://Admin:pDiGDgich3CcFvBw@cluster0.2tyy8.mongodb.net/')
 .then(()=> console.log('connect to MongoDB'))
 .catch((err)=>console.error('Could not connect to MongoDB',err));
 

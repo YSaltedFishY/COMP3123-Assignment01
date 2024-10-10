@@ -65,7 +65,7 @@ router.get('/employees/:eid', async (req,res)=>{
 
 });
 
-router.put('employees/:eid', async (req,res)=>{
+router.put('/employees/:eid', async (req,res)=>{
     const emp_id = req.params.eid;
     const emp_update = req.body;
     try{
@@ -90,8 +90,8 @@ router.put('employees/:eid', async (req,res)=>{
 
 });
 
-router.delete('/employees/:eid', async (req,res)=>{
-    const emp_id = req.params.eid;
+router.delete('/employees', async (req,res)=>{
+    const emp_id = req.query.eid;
 
     try{
         emp_delete = await Employee.findByIdAndDelete(emp_id);

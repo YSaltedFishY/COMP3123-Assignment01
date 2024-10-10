@@ -49,7 +49,9 @@ const EmployeeSchema = new mongoose.Schema({
         trim: true,
         lowercase: true,
     },
-    Salary: Number,
+    salary: {
+        type: Number
+    },
     date_of_joining: Date,
     department:{
         type: String,

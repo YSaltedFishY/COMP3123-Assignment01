@@ -12,6 +12,7 @@ router.get('/signup', (req,res) => {
     res.sendFile(path.join(__dirname, '../views/register.html'));
 });
 
+//Ask about bcrypt
 router.post('/signup', async (req,res) => {
     const {username, password, email} = req.body;
      
