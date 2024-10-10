@@ -3,7 +3,7 @@
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.6",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "fs": "^0.0.1-security",
     "fund": "^1.0.0",
     "http": "^0.0.1-security",
