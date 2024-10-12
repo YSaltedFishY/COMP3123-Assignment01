@@ -13,7 +13,7 @@ app.use(express.static('views'))
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/emp', empRouter);
 
-mongoose.connect('mongodb+srv://Admin:pDiGDgich3CcFvBw@cluster0.2tyy8.mongodb.net/')
+mongoose.connect('mongodb+srv://Admin:pDiGDgich3CcFvBw@cluster0.2tyy8.mongodb.net/Assignment01?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=> console.log('connect to MongoDB'))
 .catch((err)=>console.error('Could not connect to MongoDB',err));
 

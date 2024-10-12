@@ -17,7 +17,8 @@
   "description": "COMP3123 Fullstack | Exclude Node_module folder when pushing updates",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./assignment01/index.js"
   },
   "keywords": [],
   "author": "",

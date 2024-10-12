@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const bcrypt = require('bcrypt');
 const { User } = require('../models/Employee');
 
 router.get('/', (req,res) => {
@@ -28,8 +29,11 @@ router.post('/signup', async (req,res) => {
             return res.status(400).json({message: 'Email has been taken'});
         }
 
+        const hashPW = await bcrypt.hash(password,10);
+
         const newUser = new User({
-            email, username, password,
+            email, username, 
+            password: hashPW,
             created_at: new Date(),
             updated_at: new Date()
         });
@@ -60,9 +64,11 @@ router.post('/login', async (req,res) => {
             return res.status(400).json({message: 'Username does not exist'});
         }
 
-        if(loginUser.password !== password){
+        const decryptPW = await bcrypt.compare(password, loginUser.password)
+        if(!decryptPW){
             return res.status(400).json({message: 'Invalid password'});
         }
+
         res.json({message:`${username} has login successfully`});
     }catch(e){
         console.error('Error:',e);
