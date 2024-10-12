@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"bret\",\r\n    \"password\": \"bret123\",\r\n    \"email\": \"bret123@hotmail.com\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Vercelfish\",\r\n    \"password\": \"bsdsdsdsds\",\r\n    \"email\": \"Vercelfish@georgebrown.ca\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,14 +21,18 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/user/register",
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/user/signup",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"comp3123-assignment01",
+						"vercel",
+						"app"
 					],
-					"port": "8081",
 					"path": [
+						"api",
+						"v1",
 						"user",
-						"register"
+						"signup"
 					]
 				}
 			},
@@ -41,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"bret\",\r\n    \"password\": \"bret123\",\r\n    \"email\": \"bret123@hotmail.com\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Vercelfish\",\r\n    \"password\": \"bsdsdsdsds\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,14 +53,18 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/user/register",
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/user/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"comp3123-assignment01",
+						"vercel",
+						"app"
 					],
-					"port": "8081",
 					"path": [
+						"api",
+						"v1",
 						"user",
-						"register"
+						"login"
 					]
 				}
 			},
@@ -80,7 +88,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/api/v1//user/logout/bret",
+					"raw": "localhost:8081/api/v1/user/logout/bret",
 					"host": [
 						"localhost"
 					],
@@ -88,7 +96,6 @@
 					"path": [
 						"api",
 						"v1",
-						"",
 						"user",
 						"logout",
 						"bret"
@@ -100,8 +107,26 @@
 		{
 			"name": "getAllUsers",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/user/getAll",
+					"protocol": "https",
+					"host": [
+						"comp3123-assignment01",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"getAll"
+					]
+				}
 			},
 			"response": []
 		},
@@ -109,7 +134,22 @@
 			"name": "getAllEmployees",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/emp/employees",
+					"protocol": "https",
+					"host": [
+						"comp3123-assignment01",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees"
+					]
+				}
 			},
 			"response": []
 		},
@@ -118,16 +158,26 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"firstname\": \"Vercel\",\r\n \"lastname\": \"Fish\",\r\n \"email\": \"Vercel.deploy@example.com\",\r\n \"position\": \"Deployment\",\r\n \"salary\": 5,\r\n \"date_of_joining\": \"2023-08-10T00:00:00.000Z\",\r\n \"department\": \"External\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8081/api/v1//emp/employees",
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/emp/employees",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"comp3123-assignment01",
+						"vercel",
+						"app"
 					],
-					"port": "8081",
 					"path": [
 						"api",
 						"v1",
-						"",
 						"emp",
 						"employees"
 					]
@@ -141,18 +191,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8081/api/v1//emp/employees/id",
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/emp/employees/670a87f076ca4f85ff9ccb0c",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"comp3123-assignment01",
+						"vercel",
+						"app"
 					],
-					"port": "8081",
 					"path": [
 						"api",
 						"v1",
-						"",
 						"emp",
 						"employees",
-						"id"
+						"670a87f076ca4f85ff9ccb0c"
 					]
 				}
 			},
@@ -165,7 +216,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \"position\": \"Senior Designer\",\r\n \"salary\": 95000\r\n}",
+					"raw": "{\r\n \"department\": \"IT\",\r\n \"salary\": 30\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -173,18 +224,19 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/api/v1//emp/employees/id",
+					"raw": "https://comp3123-assignment01.vercel.app/api/v1/emp/employees/670a87f076ca4f85ff9ccb0c",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"comp3123-assignment01",
+						"vercel",
+						"app"
 					],
-					"port": "8081",
 					"path": [
 						"api",
 						"v1",
-						"",
 						"emp",
 						"employees",
-						"id"
+						"670a87f076ca4f85ff9ccb0c"
 					]
 				}
 			},
