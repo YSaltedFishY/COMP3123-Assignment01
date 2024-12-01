@@ -108,4 +108,36 @@ router.delete('/employees', async (req,res)=>{
     }
 });
 
+//Assignment02 upgrade
+router.get('employees/search', async (req,res) => {
+    const {department,position} = req.query;
+
+    try {
+        let query = {};
+        if(department){
+            query.department = department;
+        }
+        if(position){
+            query.position = position;
+        }
+
+        const employees = await Employee.find(query,
+            "firstname lastname email position salary date_of_joining department created_at updated_at"
+        )
+
+        if (employees.length === 0){
+            return res.status(404).json({
+                message: 'No employees found from the criteria'
+            })
+        }
+
+        res.status(200).json(employees)
+    } catch (e) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Search error', error: e.message
+        })
+    }
+})
+
 module.exports = router;
