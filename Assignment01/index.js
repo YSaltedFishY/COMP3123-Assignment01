@@ -6,12 +6,20 @@ const empRouter = require("./routes/employee")
 
 const app = express();
 
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://comp-3123-assignment02.vercel.app'],
+    methods: ['GET','POST','PUT','DELETE'],
+    credentials: true
+}))
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('views'))
 
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/emp', empRouter);
+
+
 
 mongoose.connect('mongodb+srv://Admin:pDiGDgich3CcFvBw@cluster0.2tyy8.mongodb.net/Assignment01?retryWrites=true&w=majority&appName=Cluster0',{
     useNewUrlParser: true,
