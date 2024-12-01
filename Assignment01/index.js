@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const employeeModel = require("./models/Employee")
 const userRouter = require("./routes/user")
 const empRouter = require("./routes/employee")
+const cors = require("cors");
 
 const app = express();
 
