@@ -46,7 +46,7 @@ router.post('/employees', async (req,res) =>{
 });
 
 //Assignment02 upgrade ORDER MATTERS
-router.get('employees/search', async (req,res) => {
+router.get('/employees/search', async (req,res) => {
     const {department,position} = req.query;
 
     try {
